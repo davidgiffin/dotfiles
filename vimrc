@@ -2,6 +2,13 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
+" tabs/spaces {{{
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
+" }}}
+
 set background=dark
 colorscheme base16-railscasts
 
