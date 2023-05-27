@@ -9,6 +9,8 @@ set softtabstop=2
 set tabstop=2
 " }}}
 
+set ignorecase
+
 set background=dark
 colorscheme base16-railscasts
 
@@ -26,3 +28,11 @@ highlight Visual       ctermbg=3   ctermfg=0
 highlight Pmenu        ctermbg=240 ctermfg=12
 highlight PmenuSel     ctermbg=3   ctermfg=1
 highlight SpellBad     ctermbg=0   ctermfg=1
+
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+endif
+
+set re=0
+
+" set number

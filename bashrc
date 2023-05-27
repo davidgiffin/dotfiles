@@ -24,3 +24,20 @@ source ~/.bash.d/host.$(hostname -s).sh 2> /dev/null
 
 # python virtualenv
 source ~/.bash.d/venv.sh && venv activate
+
+complete -C /usr/local/bin/terraform terraform
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+# pnpm
+export PNPM_HOME="/Users/david/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+. "$HOME/.cargo/env"
+
+export PATH=${PATH}:`go env GOPATH`/bin
