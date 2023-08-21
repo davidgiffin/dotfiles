@@ -41,3 +41,4 @@ esac
 . "$HOME/.cargo/env"
 
 export PATH=${PATH}:`go env GOPATH`/bin
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
